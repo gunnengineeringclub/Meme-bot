@@ -1,0 +1,55 @@
+<html>
+
+</html>
+<body>
+	<button onclick="left()">left </button>
+	<button onclick="right()">right </button>
+	<button onclick="up()">up </button>
+	<button onclick="down()">down </button>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  	var config = {
+	  	apiKey: "AIzaSyDvpv2wrDQEwHsBPUGzC5IDU4Io9PzHXAk",
+	  	authDomain: "memebot-a1790.firebaseapp.com",
+	  	databaseURL: "https://memebot-a1790.firebaseio.com",
+	  	storageBucket: "memebot-a1790.appspot.com",
+	  	messagingSenderId: "571304217602"
+  	};
+  	firebase.initializeApp(config);
+
+  	var same = "";
+
+  	let childUpdates = ["thing"]
+
+  	var updates = {};
+  	
+  	function left(){
+  		same = "left"
+  		updates['/move'] = same;
+  		firebase.database().ref().update(updates);
+  	}
+
+  	function right(){
+  		same = "right"
+  		updates['/move'] = same;
+  		firebase.database().ref().update(updates);
+  	}
+
+  	function down(){
+  		same = "down"
+  		updates['/move'] = same;
+  		firebase.database().ref().update(updates);
+  	}
+
+  	function up(){
+  		same = "up"
+  		updates['/move'] = same;
+  		firebase.database().ref().update(updates);
+  	}
+
+
+</script>
+
